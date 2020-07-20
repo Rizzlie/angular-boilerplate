@@ -3,7 +3,7 @@ on: [push]
 name: Angular Checks
 
 jobs:
-  Angular Checks:
+  Angular_checks:
     runs-on: ubuntu-20.04
 
     steps:
