@@ -1,0 +1,11 @@
+{
+  "theme": "gitbook",
+  "name": "Angular Boilerplate",
+  "tsconfig": "apps/angular-boilerplate/tsconfig.docs.json",
+  "toggleMenuItems": ["all"],
+  "disableSourceCode": false,
+  "disableDomTree": true,
+  "disableGraph": true,
+  "disableTemplateTab": false,
+  "hideGenerator": true
+}

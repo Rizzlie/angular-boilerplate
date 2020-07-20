@@ -1,0 +1,25 @@
+FROM node:10-alpine as build-stage
+ENV PROD true
+WORKDIR /app
+COPY ./package.json ./package-lock.json /app/
+RUN npm install
+COPY . /app
+
+# Build the angular app in production mode and store the artifacts in dist/apps/angular-boilerplate/ folder
+RUN npm run build:ssr
+
+# stage 2
+FROM node:10-alpine
+
+WORKDIR /app
+# Copy dependency definitions
+COPY --from=build-stage /app/package.json /app
+
+# Get all the code needed to run the app
+COPY --from=build-stage /app/dist /app/dist
+
+ADD ./build.js /app
+
+EXPOSE 4200
+
+CMD ["/bin/sh", "-c", "node build.js && npm run serve:ssr"]
