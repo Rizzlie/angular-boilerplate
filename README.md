@@ -30,13 +30,13 @@ Aplikacja zostanie uruchomiona pod adresem: http://localhost:4200
 
 `npm run build`
 
-Kod docelowy po zbudowaniu zostanie umieszczony w katalogu `dist/apps/bioloc-admin-frontend/`
+Kod docelowy po zbudowaniu zostanie umieszczony w katalogu `dist/apps/angular-boilerplate/`
 
 ### Zbudowanie aplikacji w wersji produkcyjnej
 
 `npm run build:prod`
 
-Kod docelowy po zbudowaniu zostanie umieszczony w katalogu `dist/apps/bioloc-admin-frontend/`
+Kod docelowy po zbudowaniu zostanie umieszczony w katalogu `dist/apps/angular-boilerplate/`
 
 ### Linting
 
