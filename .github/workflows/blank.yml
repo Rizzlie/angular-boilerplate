@@ -1,0 +1,33 @@
+on: [push]
+
+name: Angular Checks
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-20.04
+
+    steps:
+        - uses: actions/checkout@v1
+
+        - name: Use Node.js LTS 12.18
+          uses: actions/setup-node@v1
+          with:
+            node-version: 12.18
+
+        - name: Install dependencies
+          run: npm install
+
+        - name: Lint
+          run: npm run lint
+
+        - name: Build
+          run: npm run build
+          
+        - name: Build prod
+          run: npm run build:prod
+          
+        - name: Test
+          run: npm run test
+
+        - name: E2E
+          run: npm run e2e
